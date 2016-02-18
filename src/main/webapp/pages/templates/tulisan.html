@@ -1,0 +1,68 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Daftar Tulisan</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+            <div class="col-md-3">
+                <a href="/newTulisan">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Tambah Tulisan
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <div flash-message="5000"></div>
+            </div>
+        </div>
+
+        <p></p>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        Tulisan
+                    </th>
+                    <th class="text-center">
+                        Logo
+                    </th>
+                    <th class="text-center">
+                        Publish
+                    </th>
+                    <th class="text-center">
+                        Aksi
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="t in listTulisan">
+                    <td>
+                        {{t.tulisan}}
+                    </td>
+                    <td>
+                        <img style="width: 132px; heigth: 131px" ng-src="/upload/{{t.logo}}">
+                    </td>
+                    <td>
+                        {{t.publish == 1 ? 'Aktif':'Tidak Aktif'}}
+                    </td>
+                    <td class="text-center">
+
+                        <button ng-show="t.publish == 1" type="button" class="btn btn-success" ng-click="updatePublish(t.idTulisan, t)">
+                            Un Publish
+                        </button>
+
+                        <button ng-show="t.publish != 1" type="button" class="btn btn-success" ng-click="updatePublish(t.idTulisan, t)">
+                            Publish
+                        </button>
+
+                        <button type="button" class="btn btn-danger" ng-bootbox-confirm="Apakah anda ingin menghapus tulisan {{t.tulisan}}" ng-bootbox-confirm-action="hapusTulisan(t.idTulisan)" ng-bootbox-confirm-action-cancel="confirmCallbackCancel(attr1, attr2)">
+                            Hapus
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

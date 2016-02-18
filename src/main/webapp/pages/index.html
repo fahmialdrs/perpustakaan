@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perpustakaan Markaz Syariah</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link href="lib/css/main.css" rel="stylesheet">
+    <link href="lib/css/animate.min.css" rel="stylesheet">
+    <link href="lib/css/angular.css" rel="stylesheet">
+    <link href="lib/css/styles.css" rel="stylesheet">
+    <link href="lib/css/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="lib/css/angular-flash.min.css" rel="stylesheet">
+    <link href="lib/css/select2.css" rel="stylesheet">
+
+</head>
+
+<body ng-app="perpustakaan">
+
+<div class="navbar navbar-inverse navbar-static-top" ng-controller="PerpustakaanController">
+    <div class="container" ng-controller="TulisanController">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img ng-if="tulisanDetail.logo" style="width: 132px; heigth: 131px;position: absolute; top: 15%" ng-src="/upload/{{tulisanDetail.logo}}">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse text-center">
+            <div class="nav navbar-nav">
+                <div style="padding-left: 125px">
+                    <h1><center>MARKAZ SYARIAH</center></h1>
+                    <h4>Puncak Syariat - Kp. Babakan Pekancilan - Ds. Kuta - Kec. Mega Mendung - Kab. Bogor - Jabar </h4>
+                    <p></p>
+                    <marquee behavior="scroll" scrollamount="5" direction="left" width="400">{{tulisanDetail.tulisan}}</marquee>
+                </div>
+            </div>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<nav class="navbar navbar-default" ng-controller="PerpustakaanController">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#/">Daftar Buku</a>
+                </li>
+                <li><a href="#/peminjaman">Daftar Peminjaman</a>
+                </li>
+                <li>
+                    <a href="#/tulisan">Daftar Tulisan</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> ${user}</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/j_spring_security_logout">Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 centered" ng-view>
+
+            </div>
+            <!-- /col-lg-8 -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+
+<script src="lib/js/jquery-2.1.4.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/angular.min.js"></script>
+<script src="lib/js/angular-route.min.js"></script>
+<script src="lib/js/hover.zoom.js"></script>
+<script src="lib/js/hover.zoom.conf.js"></script>
+<script src="lib/js/tabs.js"></script>
+<script src="lib/js/angular-base64.js"></script>
+<script src="lib/js/jasny-bootstrap.min.js"></script>
+<script src="lib/js/bootbox.js"></script>
+<script src="lib/js/ngBootbox.js"></script>
+<script src="lib/js/angular-table.js"></script>
+<script src="lib/js/angular-flash.min.js"></script>
+<script src="lib/js/select2.js"></script>
+<script src="lib/js/angular-select2.js"></script>
+
+<!--SCRIPTS-->
+<script src="app/app.js"></script>
+<script src="app/controllers/appController.js"></script>
+<script src="app/controllers/peminjamanController.js"></script>
+<script src="app/controllers/tulisanController.js"></script>
+<script src="app/services/appService.js"></script>
+<script src="app/services/peminjamanService.js"></script>
+<script src="app/services/tulisanService.js"></script>
+<!--SCRIPTS END-->
+</body>
+
+</html>

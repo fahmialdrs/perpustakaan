@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Daftar Peminjaman</h3>
+    </div>
+    <div class="panel-body">
+        <p></p>
+
+        <input type="text" class="form-control ng-valid ng-dirty" ng-model="query" ng-change="updateFilteredPeminjaman()" placeholder="Search">
+
+        <p></p>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-small-font table-bordered table-striped" at-table at-paginated at-list="listPeminjamanFilter" at-config="configPeminjaman">
+                <thead class="text-center"></thead>
+                <tbody>
+                    <tr ng-class="{'danger': differenceInDays(item) <= 0, 'warning': differenceInDays(item) === 1, 'success': differenceInDays(item) > 1}">
+                        <td at-implicit at-sortable at-attribute="namaPeminjam" at-title="Nama Peminjam" at-initial-sorting="asc"></td>
+                        <td at-implicit at-sortable at-attribute="judulBuku1" at-title="Judul Buku"></td>
+                        <td at-implicit at-sortable at-attribute="alamat" at-title="Alamat"></td>
+                        <td at-implicit at-sortable at-attribute="noKontak" at-title="No Kontak"></td>
+                        <td at-title="Tanggal Peminjaman">{{item.tglPeminjaman | date:'dd MMMM yyyy'}}</td>
+                        <td at-title="Tanggal Pengembalian">{{item.tglPengembalian | date:'dd MMMM yyyy'}}</td>
+                        <td at-title="Batas Pengembalian">{{differenceInDays(item)}} Hari</td>
+                        <td at-title="Aksi">
+                            <button class="btn btn-danger" ng-bootbox-confirm="Apakah Sudah dikembalikan ?" ng-bootbox-confirm-action="deletePeminjaman(item.idPeminjaman)" ng-bootbox-confirm-action-cancel="confirmCallbackCancel(attr1, attr2)">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <at-pagination at-list="listPeminjamanFilter" at-config="configPeminjaman"></at-pagination>
+        </div>
+    </div>
+</div>

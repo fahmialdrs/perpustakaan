@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perpustakaan Markaz Syariah</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link href="lib/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Tambah Buku</div>
+    <div class="panel-body">
+        <form enctype="multipart/form-data" action="/newBuku" method="post" name="buku">
+            <div class="form-group">
+                <label>No Urut</label>
+                <input type="text" name="noUrut" class="form-control" placeholder="No Urut">
+            </div>
+
+            <div class="form-group">
+                <label>No Kode</label>
+                <input type="text" name="noKode" class="form-control" placeholder="No Kode">
+            </div>
+
+            <div class="form-group">
+                <label>Warna Buku</label>
+                <input type="text" name="warna" class="form-control" placeholder="Warna Buku">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Ukuran Panjang Buku</label>
+                        <input type="number" name="ukuranP" class="form-control" placeholder="Ukuran Panjang Buku">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Ukuran Lebar Buku</label>
+                        <input type="number" name="ukuranL" class="form-control" placeholder="Ukuran Lebar Buku">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Tebal Buku</label>
+                <input type="number" name="tebal" class="form-control" placeholder="Tebal Buku">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Panjang Kertas</label>
+                        <input type="number" name="kertasP" class="form-control" placeholder="Panjang Kertas">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Lebar Kertas</label>
+                        <input type="text" name="kertasL" class="form-control" placeholder="Lebar Kertas">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Cover</label>
+                <input type="text" name="cover" class="form-control" placeholder="Cover">
+            </div>
+            <div class="form-group">
+                <label>Kategori</label>
+                <input type="text" name="kategori" class="form-control" placeholder="Kategori">
+            </div>
+            <div class="form-group">
+                <label>Jenis</label>
+                <input type="text" name="jenis" class="form-control" placeholder="Jenis">
+            </div>
+            <div class="form-group">
+                <label>Madzhab</label>
+                <input type="text" name="madzhab" class="form-control" placeholder="Madzhab">
+            </div>
+            <div class="form-group">
+                <label>Pentahqiq</label>
+                <input type="text" name="pentahqiq" class="form-control" placeholder="Pentahqiq">
+            </div>
+            <div class="form-group">
+                <label>Pentakhrij</label>
+                <input type="text" name="pentakhrij" class="form-control" placeholder="Pentakhrij">
+            </div>
+            <div class="form-group">
+                <label>Pengantar</label>
+                <input type="text" name="pengantar" class="form-control" placeholder="Pengantar">
+            </div>
+            <div class="form-group">
+                <label>Penterjemah</label>
+                <input type="text" name="penterjemah" class="form-control" placeholder="Penterjemah">
+            </div>
+            <div class="form-group">
+                <label>Pengedit</label>
+                <input type="text" name="pengedit" class="form-control" placeholder="Pengedit">
+            </div>
+            <div class="form-group">
+                <label>Penyalur</label>
+                <input type="text" name="penyalur" class="form-control" placeholder="Penyalur">
+            </div>
+            <div class="form-group">
+                <label>Cetakan</label>
+                <input type="text" name="cetakan" class="form-control" placeholder="Cetakan">
+            </div>
+            <div class="form-group">
+                <label>Tahun</label>
+                <input type="number" name="tahun" class="form-control" placeholder="Tahun">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Jilid</label>
+                        <input type="text" name="jilid" class="form-control" placeholder="Jilid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Juz</label>
+                        <input type="text" name="juz" class="form-control" placeholder="Juz">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Eksemplar</label>
+                <input type="text" name="eksemplar" class="form-control" placeholder="Eksemplar">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Judul 1</label>
+                        <input type="text" name="judul1" class="form-control" placeholder="Judul 1">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Pengarang 1</label>
+                        <input type="text" name="pengarang1" class="form-control" placeholder="Pengarang 1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Judul 2</label>
+                        <input type="text" name="judul2" class="form-control" placeholder="Judul 2">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Pengarang 2</label>
+                        <input type="text" name="pengarang2" class="form-control" placeholder="Pengarang 2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Catatan</label>
+                <input type="text" name="catatan" class="form-control" placeholder="Catatan">
+            </div>
+
+            <div class="form-group">
+                <label>Foto</label>
+
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                    <div>
+                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span>
+                        <input type="file" name="fileUpload">
+                        </span>
+                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">Save</button>
+        </form>
+    </div>
+</div>
+
+<script src="lib/js/jquery-2.1.4.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/jasny-bootstrap.min.js"></script>
+
+</body>
+
+</html>

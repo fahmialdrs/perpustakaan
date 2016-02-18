@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perpustakaan Markaz Syariah</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link href="lib/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Tambah Tulisan</div>
+    <div class="panel-body">
+        <form name="tulisan" enctype="multipart/form-data" action="/newTulisan" method="post">
+            <ul>
+                <li>Note : </li>
+                <li>logo diharuskan 132 x 131 pixel</li>
+            </ul>
+            <div class="form-group">
+                <label>Tulisan</label>
+                <input type="text" name="tulisan" class="form-control" placeholder="Tulisan">
+            </div>
+
+            <div class="form-group">
+                <label>Logo</label>
+
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                    <div>
+                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span>
+                        <input type="file" name="fileUpload">
+                        </span>
+                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">Save</button>
+        </form>
+    </div>
+</div>
+
+<script src="lib/js/jquery-2.1.4.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/jasny-bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
